@@ -145,6 +145,12 @@ for x, y in dict.items():
         for t in y:
             #print(type(t))
             print(t, x)
+
+#2001
+import sys
+
+nums = [int(x) for x in sys.stdin.read().split()]
+print(len(nums))
+print(nums[0] - nums[len(nums)-2], nums[1] - nums[3])
+
 """
-#just adding changes to chech branch 
-#add some more stuff
