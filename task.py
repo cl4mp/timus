@@ -1,6 +1,5 @@
-#binary search
 """
-
+#binary search
 #number to search
 value = int(input())
 
@@ -23,7 +22,7 @@ else:
     print(mid)
 
 
-
+#1880_1
 import sys 
 input = [int(x) for x in sys.stdin.read().split()]
 
@@ -38,9 +37,7 @@ first.intersection_update(second)
 first.intersection_update(third)
 print(len(first))
 
-
-   
-
+#1880_2
 import sys
 nums = []
 for line in sys.stdin:
@@ -49,8 +46,7 @@ nums[1].intersection_update(nums[3])
 nums[1].intersection_update(nums[5])
 print(len(nums[1]))
 
-
-
+#1025
 import sys, math
 input = [int(x) for x in sys.stdin.read().split()]
 half = math.ceil(input[0]/2)
@@ -62,7 +58,7 @@ for x in range(0, half):
 print(voters)
 
 
-
+#1020
 import sys,math
 
 def length(a, b):
@@ -83,7 +79,7 @@ for x in range(1, len(nums)):
 rope+=nails
 print(format(rope, ".2f"))
 
-
+#1209
 import sys, math
 input = [int(x) for x in sys.stdin.read().split()]
 
@@ -105,7 +101,7 @@ print(input)
 print(line)
 
 
-
+#1100_1
 import sys
 
 nums = []
@@ -126,8 +122,7 @@ for x in range(1, length):
     print(nums[x][0], nums[x][1])
 
 
-"""
-
+#1100_2
 import sys
 
 dict ={}
@@ -150,3 +145,4 @@ for x, y in dict.items():
         for t in y:
             #print(type(t))
             print(t, x)
+"""
