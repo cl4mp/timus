@@ -153,4 +153,21 @@ nums = [int(x) for x in sys.stdin.read().split()]
 print(len(nums))
 print(nums[0] - nums[len(nums)-2], nums[1] - nums[3])
 
+#2100
+import sys
+
+all =2
+lis=[]
+for line in sys.stdin:
+    lis.extend([x for x in line.split()])
+
+for x in range(1,len(lis)):
+    lis[x]=lis[x].split("+")
+
+for x in range(1,len(lis)):
+    all+=len(lis[x])
+if all == 13:
+    print((all+1)*100)
+else:
+    print(all*100)
 """
