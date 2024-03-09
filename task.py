@@ -21,10 +21,11 @@ if low > max:
 else:
     print(mid)
 
+    
 
 #1880_1
 import sys 
-input = [int(x) for x in sys.stdin.read().split()]
+input = [int(x) for x in sys.stdin.read().split()] #list comprehension
 
 delim2 = input[0]+1
 first = set(input[1:delim2])
@@ -37,14 +38,16 @@ first.intersection_update(second)
 first.intersection_update(third)
 print(len(first))
 
+
 #1880_2
 import sys
 nums = []
 for line in sys.stdin:
-  nums.append(set(line.split()))
-nums[1].intersection_update(nums[3])
-nums[1].intersection_update(nums[5])
+  nums.append(set(line.split())) #appends an element to the end of the list, splits a string into a list where each word is a list item, set constructor
+nums[1].intersection_update(nums[3], nums[5]) #removes the items that is not present in all sets
 print(len(nums[1]))
+
+
 
 #1025
 import sys, math
