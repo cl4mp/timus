@@ -26,7 +26,6 @@ else:
 #1880_1
 import sys 
 input = [int(x) for x in sys.stdin.read().split()] #list comprehension
-
 delim2 = input[0]+1
 first = set(input[1:delim2])
 delim1 = delim2+1
@@ -52,9 +51,9 @@ print(len(nums[1]))
 #1025
 import sys, math
 input = [int(x) for x in sys.stdin.read().split()]
-half = math.ceil(input[0]/2)
-input.pop(0)
-input.sort()
+half = math.ceil(input[0]/2) #round a number upward to its nearest integer
+input.pop(0) #removes the element at the specified position
+input.sort() #sorts the list ascending by default
 voters = 0
 for x in range(0, half):
     voters+=math.ceil(input[x]/2)
