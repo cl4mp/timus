@@ -60,18 +60,18 @@ for x in range(0, half):
 print(voters)
 
 
+
 #1020
 import sys,math
-
 def length(a, b):
-    return math.sqrt(pow((b[0]-a[0]),2) + pow((b[1]-a[1]),2))
+    return math.sqrt(pow((b[0]-a[0]),2) + pow((b[1]-a[1]),2)) #length between 2 dots
 
 nums = []
 for line in sys.stdin:
-  nums.append([float(x) for x in line.split()])
+  nums.append([float(x) for x in line.split()]) #add each line as list
 
 #nails = nums[0][0]*nums[0][1]*1.57
-nails = 2*3.14*nums[0][1]
+nails = 2*3.14*nums[0][1] #circumference 2pr
 rope = 0
 for x in range(1, len(nums)):
     if x == len(nums)-1:
@@ -80,6 +80,8 @@ for x in range(1, len(nums)):
     rope +=length(nums[x], nums[x+1])
 rope+=nails
 print(format(rope, ".2f"))
+
+
 
 #1209
 import sys, math
