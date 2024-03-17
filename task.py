@@ -87,16 +87,16 @@ print(format(rope, ".2f"))
 import sys, math
 input = [int(x) for x in sys.stdin.read().split()]
 
-line = ""
-for x in range(40):
-    line+=str(pow(10,x))
+#line = ""
+#for x in range(40):
+#    line+=str(pow(10,x))
 
-for i in range(1, input[0]+1):
-    print(line[input[i]-1], end =" ")
-print()
+#for i in range(1, input[0]+1):
+#    print(line[input[i]-1], end =" ")
+#print()
 for i in range(1, len(input)):
-    if ((math.sqrt(8*int(input[i])-7) -1)/2)%1 == 0:
-        print(1, end=" ")
+    if ((math.sqrt(8*int(input[i])-7) -1)/2)%1 == 0: #sequence generalization
+        print(1, end=" ") #by default print fn ends with a newline(\n), can end a print statement with any character/string
     else:
         print(0, end=" ")
 
