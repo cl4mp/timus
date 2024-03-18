@@ -68,8 +68,8 @@ for line in sys.stdin:
 
 length = len(nums)
 stop = 0 
-for j in range(1, length):  
-    for i in range(1, length-j):
+for j in range(1, length-1):  #biggest go to the end, comparing second-to-last
+    for i in range(1, length-j): #length to work on -1 each time
         if nums[i][1]<nums[i+1][1]:
             nums[i],nums[i+1]=nums[i+1],nums[i]
             stop=1
