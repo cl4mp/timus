@@ -23,44 +23,6 @@ else:
 
     
 
-#1880_1
-import sys 
-input = [int(x) for x in sys.stdin.read().split()] #list comprehension
-delim2 = input[0]+1
-first = set(input[1:delim2])
-delim1 = delim2+1
-delim2 = delim1+input[delim2]
-second = set(input[delim1:delim2])
-delim1 = delim2+1
-third = set(input[delim1:])
-first.intersection_update(second)
-first.intersection_update(third)
-print(len(first))
-
-
-#1880_2
-import sys
-nums = []
-for line in sys.stdin:
-  nums.append(set(line.split())) #appends an element to the end of the list, splits a string into a list where each word is a list item, set constructor
-nums[1].intersection_update(nums[3], nums[5]) #removes the items that is not present in all sets
-print(len(nums[1]))
-
-
-
-#1025
-import sys, math
-input = [int(x) for x in sys.stdin.read().split()]
-half = math.ceil(input[0]/2) #round a number upward to its nearest integer
-input.pop(0) #removes the element at the specified position
-input.sort() #sorts the list ascending by default
-voters = 0
-for x in range(0, half):
-    voters+=math.ceil(input[x]/2)
-print(voters)
-
-
-
 #1020
 import sys,math
 def length(a, b):
@@ -83,26 +45,17 @@ print(format(rope, ".2f"))
 
 
 
-#1209
+#1025
 import sys, math
 input = [int(x) for x in sys.stdin.read().split()]
+half = math.ceil(input[0]/2) #round a number upward to its nearest integer
+input.pop(0) #removes the element at the specified position
+input.sort() #sorts the list ascending by default
+voters = 0
+for x in range(0, half):
+    voters+=math.ceil(input[x]/2)
+print(voters)
 
-#line = ""
-#for x in range(40):
-#    line+=str(pow(10,x))
-
-#for i in range(1, input[0]+1):
-#    print(line[input[i]-1], end =" ")
-#print()
-for i in range(1, len(input)):
-    if ((math.sqrt(8*int(input[i])-7) -1)/2)%1 == 0: #sequence generalization
-        print(1, end=" ") #by default print fn ends with a newline(\n), can end a print statement with any character/string
-    else:
-        print(0, end=" ")
-
-print()
-print(input)
-print(line)
 
 
 #1100_1
@@ -149,5 +102,54 @@ for x, y in dict.items():
         for t in y:
             #print(type(t))
             print(t, x)
+
+
+
+#1209
+import sys, math
+input = [int(x) for x in sys.stdin.read().split()]
+
+#line = ""
+#for x in range(40):
+#    line+=str(pow(10,x)) #concatenating strings
+
+#for i in range(1, input[0]+1):
+#    print(line[input[i]-1], end =" ")
+#print()
+
+for i in range(1, len(input)):
+    if ((math.sqrt(8*int(input[i])-7) -1)/2)%1 == 0: #sequence generalization
+        print(1, end=" ") #by default print fn ends with a newline(\n), can end a print statement with any character/string
+    else:
+        print(0, end=" ")
+
+print()
+#print(input)
+#print(line)
+
+
+            
+#1880_1
+import sys 
+input = [int(x) for x in sys.stdin.read().split()] #list comprehension
+delim2 = input[0]+1
+first = set(input[1:delim2])
+delim1 = delim2+1
+delim2 = delim1+input[delim2]
+second = set(input[delim1:delim2])
+delim1 = delim2+1
+third = set(input[delim1:])
+first.intersection_update(second)
+first.intersection_update(third)
+print(len(first))
+
+
+#1880_2
+import sys
+nums = []
+for line in sys.stdin:
+  nums.append(set(line.split())) #appends an element to the end of the list, splits a string into a list where each word is a list item, set constructor
+nums[1].intersection_update(nums[3], nums[5]) #removes the items that is not present in all sets
+print(len(nums[1]))
+
 """
-#just adding changes to check branch
