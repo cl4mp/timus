@@ -23,6 +23,29 @@ else:
 
     
 
+#1000
+import sys
+
+val = [int (x) for x in sys.stdin.read().split()]
+
+res = val[0] + val[1]
+
+print(res)
+
+
+
+#1001
+import sys, math
+
+val = [int (x) for x in sys.stdin.read().split()]
+
+length = len(val)
+
+for x in range(length-1, -1, -1):
+    print(format((math.sqrt(val[x])), ".4f"))
+
+
+    
 #1020
 import sys,math
 def length(a, b):
@@ -55,6 +78,23 @@ voters = 0
 for x in range(0, half):
     voters+=math.ceil(input[x]/2)
 print(voters)
+
+
+
+#1068
+import sys
+
+val = [int (x) for x in sys.stdin.read().split()]
+
+res = 0
+
+if val[0] >= 1:
+    for x in range(1, val[0]+1):
+        res+=x
+else:
+    for x in range(val[0], 2):
+        res+=x
+print(res)
 
 
 
