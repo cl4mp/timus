@@ -124,23 +124,19 @@ import sys
 
 dict ={}
 for x in range(100,-1,-1):
-    dict.update({str(x):[]})
+    dict.update({str(x):[]}) #created a dictionary with value as list
 
 def process(line):
     k = [x for x in line.split()]
     if len(k)!=1:
         dict[k[1]].append(k[0])
-   # print(type(x))
-    #print(x)
 
 for line in sys.stdin:
-   #print(type(line))
     process(line)
-print(dict)
-for x, y in dict.items():
+
+for x, y in dict.items(): #items method returns a view object which contains the key-value pairs of the dictionary, as tuples in a list
     if y:
         for t in y:
-            #print(type(t))
             print(t, x)
 
 
@@ -168,7 +164,65 @@ print()
 #print(line)
 
 
-            
+
+#1293
+import sys
+
+input  = [int(x) for x in sys.stdin.read().split()]
+
+res = 1
+
+for x in input:
+    res*=x
+
+print(res*2)
+
+
+
+#1409
+import sys
+
+input  = [int(x) for x in sys.stdin.read().split()]
+
+print(input[1]-1, input[0]-1)
+
+
+
+#1785
+n = int(input())
+if n in range(1,5):
+ print('few')
+elif n in range(5,10):
+ print('several')
+elif n in range(10,20):
+ print('pack')
+elif n in range(20,50):
+ print('lots')
+elif n in range(50,100):
+ print('horde')
+elif n in range(100,250):
+ print('throng')
+elif n in range(250,500):
+ print('swarm')
+elif n in range(500,1000):
+ print('zounds')
+else:
+ print('legion')
+
+
+
+#1820
+a = [int(x) for x in input().split()]
+if a[0]<=a[1]:
+    print(2)
+else:
+    if (2*a[0]%a[1]) == 0:
+        print(2*a[0]//a[1])
+    else:
+        print(2*a[0]//a[1]+1)
+
+
+
 #1880_1
 import sys 
 input = [int(x) for x in sys.stdin.read().split()] #list comprehension
@@ -192,4 +246,74 @@ for line in sys.stdin:
 nums[1].intersection_update(nums[3], nums[5]) #removes the items that is not present in all sets
 print(len(nums[1]))
 
+
+
+#1893
+import re
+
+pathD=input()
+res=re.findall(r'[A-Z]|\d+',pathD) #\d+ matches 1-or-more digits 	| either smth or smth
+a = res[1]
+b = int(res[0])
+if b in range(1,3):
+    if a in {'A','D'}:
+        print('window')
+    else:
+        print('aisle')
+
+if b in range(3,21):
+    if a in {'A','F'}:
+        print('window')
+    elif a in {'B','C','D','E'}:
+        print('aisle')
+    else:
+        print('neither')
+
+if b in range(21,66):
+    if a in {'A','K'}:
+        print('window')
+    elif a in {'C','D','G','H'}:
+        print('aisle')
+    else:
+        print('neither')
+
+
+
+#2001
+import sys
+
+data = [int(x) for x in sys.stdin.read().split()]
+print(data[0]-data[4])
+print(data[1]-data[3])
+
+
+
+#2012
+
+f=int(input())
+
+prob = 12 - f
+time = 4*60//45
+if prob <= time:
+    print("YES")
+else:
+    print("NO")
+
+
+
+#2100
+import sys
+
+data = [x for x in sys.stdin.read().split()]
+persons = 2
+
+for x in range(1, int(data[0])+1):
+    if '+' in data[x]:
+        persons+=2
+    else:
+        persons+=1
+if persons == 13:
+    print(1400)
+else:
+    print(persons*100)
 """
