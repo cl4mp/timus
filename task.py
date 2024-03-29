@@ -171,6 +171,21 @@ for x, y in dict.items(): #items method returns a view object which contains the
 
 
 
+#1110
+import sys
+data = [int (x) for x in sys.stdin.read().split()]
+result = []
+for i in range(0, data[1]):
+    if i**data[0] % data[1] == data[2]:
+        result.append(i)
+if len(result) == 0:
+    print(-1)
+else:
+    for r in result:
+        print(r, end=' ')
+
+
+        
 #1196
 import sys
 ll = set()
@@ -205,6 +220,19 @@ for i in range(1, len(input)):
 print()
 #print(input)
 #print(line)
+
+
+
+#1243
+import sys
+data = int(sys.stdin.readline())
+print(data%7)
+
+
+#1264
+import sys
+data = [int(x) for x in sys.stdin.read().split()]
+print(data[0]*(data[1]+1))
 
 
 
@@ -341,6 +369,16 @@ if prob <= time:
     print("YES")
 else:
     print("NO")
+
+
+
+#2066
+import sys
+data = [int(x) for x in sys.stdin.read().split()]
+if (data[0] == data[1] == 0) or (data[0] == data[1] == 1) or (data[0] == 0 and data[1] == 1):
+    print(data[0]-data[1]-data[2])
+else:
+    print(data[0]-(data[1]*data[2]))
 
 
 
