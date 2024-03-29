@@ -45,7 +45,37 @@ for x in range(length-1, -1, -1):
     print(format((math.sqrt(val[x])), ".4f"))
 
 
-    
+
+#1014
+import sys
+data = int(sys.stdin.readline())
+result = []
+res = 0
+if data in range(0, 10):
+    if data == 0:
+        res = 10
+    else:
+        res = data
+else:
+    x = 9
+    while x > 1:
+        if data % x == 0:
+            data = data // x
+            result.append(x)
+            x  = 9
+        else:
+            x -= 1    
+    if data != 1:
+        res = -1         
+    else:
+        res = int(result[len(result)-1])
+        for x in result[-2::-1]:
+            res = res*10 + int(x)
+#print(result)
+print(res)
+
+
+
 #1020
 import sys,math
 def length(a, b):
@@ -138,6 +168,19 @@ for x, y in dict.items(): #items method returns a view object which contains the
     if y:
         for t in y:
             print(t, x)
+
+
+
+#1196
+import sys
+ll = set()
+for i in range(int(sys.stdin.readline())):
+    ll.add(sys.stdin.readline())
+n = 0
+for j in range(int(sys.stdin.readline())):
+    if sys.stdin.readline() in ll:
+        n += 1
+print(n)
 
 
 
