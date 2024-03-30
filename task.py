@@ -250,6 +250,22 @@ print(res*2)
 
 
 
+#1296
+import sys
+data = [int(x) for x in sys.stdin.read().split()]
+
+all_max = 0
+now_max = 0
+for i in range(1,len(data)):
+    now_max = now_max + data[i]
+    if now_max < 0:
+        now_max = 0
+    if all_max < now_max:
+        all_max = now_max
+print(all_max)
+
+
+
 #1409
 import sys
 
