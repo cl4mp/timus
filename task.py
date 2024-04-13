@@ -376,7 +376,6 @@ print(data[1]-data[3])
 
 
 #2012
-
 f=int(input())
 
 prob = 12 - f
@@ -388,6 +387,26 @@ else:
 
 
 
+#2056
+import sys
+data = [int(x) for x in sys.stdin.read().split()]
+sum = 0
+for i in range(1, data[0]+1):
+    sum+=data[i]
+avg = 0
+avg = sum /data[0]
+
+if 3 in data[1:]:
+    print("None")
+elif (avg == 5):
+    print("Named")
+elif (avg >= 4.5):
+    print("High")
+else:
+    print("Common")
+
+    
+    
 #2066
 import sys
 data = [int(x) for x in sys.stdin.read().split()]
