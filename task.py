@@ -387,6 +387,33 @@ else:
 
 
 
+#2023
+import sys
+data = sys.stdin.read().split()
+
+list1 = ["Alice", "Ariel", "Aurora", "Phil", "Peter", "Olaf", "Phoebus", "Ralph", "Robin"]
+list2 = ["Bambi", "Belle", "Bolt", "Mulan", "Mowgli", "Mickey", "Silver", "Simba", "Stitch"]
+list3 = ["Dumbo", "Genie", "Jiminy", "Kuzko", "Kida", "Kenai", "Tarzan", "Tiana", "Winnie"]
+current = 1
+steps = 0
+for x in range(1,int(data[0])+1):
+    if data[x] in list1:
+        steps += abs(1 - current)
+        current = 1
+        continue
+    if data[x] in list2:
+        steps += abs(2 - current)
+        current = 2
+        continue
+    if data[x] in list3:
+        steps += abs(3 - current)
+        current = 3
+        continue
+
+print(steps)
+
+
+
 #2056
 import sys
 data = [int(x) for x in sys.stdin.read().split()]
@@ -406,7 +433,7 @@ else:
     print("Common")
 
     
-    
+
 #2066
 import sys
 data = [int(x) for x in sys.stdin.read().split()]
