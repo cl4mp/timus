@@ -310,6 +310,19 @@ else:
 
 
 
+#1877
+import sys
+data = sys.stdin.read().split()
+
+if data[1] >= '0001' and int(data[1]) % 2 != 0:
+    print("yes")
+elif data[0] >= '0002' and int(data[0]) % 2 == 0:
+    print('yes')
+else:
+    print("no")
+
+
+
 #1880_1
 import sys 
 input = [int(x) for x in sys.stdin.read().split()] #list comprehension
