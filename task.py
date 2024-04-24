@@ -128,6 +128,27 @@ print(res)
 
 
 
+#1083
+import sys
+
+n, m = [x for x in input().split()]
+x = int(n)
+y = len(m)
+if x % y == 0:
+    last = y
+else:
+    last = x % y 
+
+result = x
+
+while x > last:
+    x -= y
+    result *= x
+#result*= last
+print(result)
+
+
+
 #1100_1
 import sys
 
@@ -227,6 +248,22 @@ print()
 import sys
 data = int(sys.stdin.readline())
 print(data%7)
+
+
+
+#1263
+import sys
+
+n, m = [int(x) for x in input().split()]
+k = [0]*n
+
+for i in range(m):
+    x = int(input())
+    k[x-1] += 1
+for i in range(n):
+    #print( "%.2f" % (k[u]*100/ m), "%", sep="" )
+    print(f"{(k[i]*100/m):.2f}%")
+
 
 
 #1264
