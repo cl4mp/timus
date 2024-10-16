@@ -329,6 +329,26 @@ input  = [int(x) for x in sys.stdin.read().split()]
 print(input[1]-1, input[0]-1)
 
 
+#1496
+import sys
+
+data = [x for x in sys.stdin.read().split()]
+res = set()
+uniq = set()
+for x in data:
+    if x not in res:
+        res.add(x)
+    else:
+        uniq.add(x)
+            
+#o(n^2)
+#for x in data:
+#    if data.count(x)>1:
+#        res.add(x)
+for l in uniq:        
+    print(l)
+
+
 
 #1785
 n = int(input())
