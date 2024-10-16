@@ -21,7 +21,12 @@ if low > max:
 else:
     print(mid)
 
-    
+
+#############
+split() a string into a list  
+input() read from standard input,  input type is a string by default
+sys.stdin is a file-like object that can be read from using standard file i/o methods, such as read() readline() readlines()
+#############
 
 #1000
 import sys
@@ -206,7 +211,20 @@ else:
         print(r, end=' ')
 
 
-        
+
+#1120
+f=int(input())
+
+def res_a(x):
+    rng = int((1 + (1+8*x)**(1/2))/2)
+    for x in range(rng,0,-1):
+        res = ((2*f)/x -x + 1)/2
+        #print(f'isnise {x} & {res}')
+        if res >=1 and res %1 == 0: 
+            return x, int(res)
+            break
+res = res_a(f)
+print(res[1], res[0])        
 #1196
 import sys
 ll = set()
@@ -509,4 +527,8 @@ if persons == 13:
     print(1400)
 else:
     print(persons*100)
+
+
+
+
 """
