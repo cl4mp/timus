@@ -552,3 +552,57 @@ else:
 check new remote
 
 """
+f = input()
+
+my_dict = {}
+my_dict2 ={}
+
+
+lowercase_alphabet = [chr(i) for i in range(ord('a'), ord('z') + 1)]
+#print(lowercase_alphabet)
+
+for index, element in enumerate(lowercase_alphabet):   
+    my_dict[index] = element
+for index, element in enumerate(lowercase_alphabet):   
+    my_dict2[element] = index
+
+old_lst =list(f)
+lst =[]
+
+for x in old_lst:
+    lst.append(my_dict2[x])
+#print(lst)
+#lst = [23, 1, 3, 20, 24, 17]
+#def step3(x):
+
+len = len(lst)-1
+#print(len)
+result =[]
+while len >= 1:
+    if lst[len] < lst [len-1]:
+        
+        k = lst[len] + 26 - lst[len-1] 
+        #print(k)
+        len-=1
+        result.append(k)
+    else:
+        k = lst[len] -lst[len-1] 
+        #print(k)
+        len-=1
+        result.append(k)
+if lst[0]<5:
+    lst[0]+=26
+result.append(lst[0]-5)       
+#print(result)
+
+
+
+
+
+
+
+print(my_dict)
+
+for x in reversed(result):
+    print(my_dict[x], end='')
+
