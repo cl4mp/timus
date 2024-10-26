@@ -436,6 +436,21 @@ elif n in range(500,1000):
 else:
  print('legion')
 
+ 
+
+#1787
+import sys
+
+data = [int(x) for x in sys.stdin.read().split()]
+res = 0
+for x in range(data[1]):
+    if res < 0:
+        res = 0
+    res += data[2+x]-data[0]
+    if res < 0:
+        res = 0
+print(res)
+
 
 
 #1820
