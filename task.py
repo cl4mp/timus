@@ -51,6 +51,23 @@ for x in range(length-1, -1, -1):
 
 
 
+#1005
+import sys
+
+vec = [int(x) for x in sys.stdin.read().split()[1:]]
+
+def recurs(vec, i, sum_cal, sum):
+    if i == 0:
+        return abs((sum - sum_cal)- sum_cal)
+    return min(recurs(vec, i - 1, sum_cal + vec[i-1], sum), recurs(vec, i - 1, sum_cal, sum))
+
+def driver(vec):
+    return recurs(vec, len(vec), 0, sum(vec))
+
+print(driver(vec))
+
+
+
 #1014
 import sys
 data = int(sys.stdin.readline())
