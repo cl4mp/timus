@@ -23,9 +23,19 @@ else:
 
 
 #############
-split() a string into a list  
-input() read from standard input,  input type is a string by default
+    INPUT
+split() a string into a list, default separator is any whitespace
+
+input() read from standard input, input type is a <string> by default
+
+stdin internally calls input() and APPEND newline character
 sys.stdin is a file-like object that can be read from using standard file i/o methods, such as read() readline() readlines()
+sys.stdin.readline() <class str> //read a single line with a newline character at the end
+sys.stdin.readlines() <class list> //read lines and return list of lines with a newline character at the end of each
+sys.stdin.read() <class str> //read everything and return as one string->usefull for small data, big - use a lot of memory
+
+for line in sys.stdin: <str>// will iterate through standard input until end-of-file is reached
+
 #############
 
 #1000
@@ -338,6 +348,44 @@ print(all_max)
 
 
 
+#1313
+import sys
+
+a = int(input())
+#print(f'This is input {a}')
+matrix = [[0 for x in range(a)] for x in range(a)]
+row = 0
+for line in sys.stdin:
+    nums = line.split()
+    for i in range(a):
+        #print(nums[i])
+        matrix[row][i]=nums[i]
+    row += 1
+#print(matrix)
+
+res =[]
+
+res.append(matrix[0][0])
+for i in range(1,a):
+     k = 0
+     for j in range(i,-1,-1):
+          res.append(matrix[j][k])
+          k += 1
+
+
+m = 0
+for j in range(1,a):
+    k = j
+
+    for i in range(a-1,m,-1):
+        res.append(matrix[i][k])
+        k += 1
+    m += 1
+for rs in res:
+    print(int(rs), end=' ')
+
+
+
 #1409
 import sys
 
@@ -412,6 +460,30 @@ for x in data:
 #        res.add(x)
 for l in uniq:        
     print(l)
+
+
+
+#1585
+import sys
+e, m, l = 0, 0, 0
+data = sys.stdin.readlines()
+
+for item in data[1:]:
+    if item[0] == 'E':
+        e += 1
+    elif item[0] == 'M':
+        m += 1
+    else:
+        l += 1
+if e > m:
+    if l > e:
+        print('Little Penguin')
+    else:
+        print('Emperor Penguin')
+elif m > l:
+    print('Macaroni Penguin')
+else:
+    print('Little Penguin')
 
 
 
