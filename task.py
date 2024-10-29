@@ -386,6 +386,26 @@ for rs in res:
 
 
 
+#1330
+import sys 
+inp = sys.stdin.read().split()
+
+N = int(inp[0])
+s = [0]*(N+1)
+#adding element one by one
+for i in range(1,N+1):
+   k = int(inp[i])
+   s[i] = s[i-1] + k
+
+iter = N+2
+
+while iter<len(inp):
+   f, l = int(inp[iter]), int(inp[iter+1])
+   sys.stdout.write('%s \n' % (s[l] - s[f-1]))
+   iter += 2
+
+
+   
 #1409
 import sys
 
@@ -699,10 +719,12 @@ if persons == 13:
     print(1400)
 else:
     print(persons*100)
-
-
-check new remote
-
 """
+
+
+
+
+
+   
 
 
