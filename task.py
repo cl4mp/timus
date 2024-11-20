@@ -626,6 +626,20 @@ if b in range(21,66):
 
 
 
+#1910
+k = int(input())
+ls = [int(x) for x in input().split()]
+mid = 0
+max = 0
+for i in range(k-2):
+    value = sum(ls[i:i+3])
+    if value > max:
+        max = value
+        mid = i+2
+print(max, mid)
+
+
+
 #2001
 import sys
 
